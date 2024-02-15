@@ -1,0 +1,74 @@
+@import @styles/config.sass
+
+.card
+    width: px(286px)
+    position: relative
+    padding: px(12px) px(16px)
+    background: rgba(#fff, .05)
+    border: 1px solid rgba(#fff, .1)
+    border-radius: px(10px)
+    color: #fff
+    &__sub
+        font-size: px(14px)
+        line-height: 1
+        color: rgba(#fff, .3)
+    &__label
+        margin-top: 1px
+        font-size: px(16px)
+        line-height: 1.4
+        font-weight: 500
+    &__image
+        display: flex
+        align-items: center
+        justify-content: center
+        margin-top: px(12px)
+        img
+            height: px(82px)
+            width: px(158px)
+            pointer-events: none
+    &__body
+        margin-top: px(10px)
+        padding-top: px(13px)
+        border-top: 1px solid rgba(#fff, .1)
+    &__details
+        font-size: px(14px)
+        line-height: 1.4
+        font-weight: 400
+        &-item
+            display: flex
+            align-items: flex-start
+            justify-content: space-between
+            margin-bottom: px(7px)
+            &:last-child
+                margin-bottom: 0
+        &-prop
+            flex-shrink: 0
+            margin-right: px(10px)
+        &-value
+            font-weight: 500
+            @include wordwrap
+        .mark
+            color: var(--color-main)
+        .dark
+            font-weight: 300
+            opacity: .3
+    &__btn
+        display: block
+        width: 100%
+        margin-top: px(15px)
+        padding: px(9px) px(15px) px(8px)
+        border-radius: px(10px)
+        background: rgba(#fff, .1)
+        border: none
+        cursor: pointer
+        font-weight: 400
+        font-size: px(16px)
+        line-height: 1.4
+        color: #fff
+        transition: all .3s
+        &:focus,
+        &:active
+            color: #fff
+        &:hover
+            color: #fff
+            background: rgba(#fff, .3)

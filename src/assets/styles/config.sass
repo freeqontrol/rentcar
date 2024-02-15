@@ -1,0 +1,53 @@
+@use 'sass:math'
+
+@mixin font($name, $style, $weight, $url)
+    @font-face
+        font-family: $name
+        font-style: $style
+        font-weight: $weight
+        src: url($url) format('woff2')
+
+@include font('Mazzard', normal, 300, '../fonts/MazzardM-Light.woff2')
+@include font('Mazzard', normal, 400, '../fonts/MazzardM-Regular.woff2')
+@include font('Mazzard', normal, 500, '../fonts/MazzardM-Medium.woff2')
+@include font('Mazzard', normal, 600, '../fonts/MazzardM-SemiBold.woff2')
+@include font('Mazzard', normal, 700, '../fonts/MazzardM-Bold.woff2')
+@include font('Mazzard', normal, 800, '../fonts/MazzardM-ExtraBold.woff2')
+@include font('Mazzard', normal, 900, '../fonts/MazzardM-Black.woff2')
+
+@mixin wordwrap
+    overflow: hidden
+    white-space: nowrap
+    text-overflow: ellipsis
+
+$vw-viewport: 1920
+@function px($font)
+    $vw-context: $vw-viewport * 0.01 * 1px
+    @return math.div($font, $vw-context) * 1vw
+
+:root
+    --color-main: #00A2EA
+    --color-main-rgb: 0, 162, 234
+
+    --font-main: 'Mazzard'
+
+*
+    box-sizing: border-box
+    outline: none
+    padding: 0
+    margin: 0
+    user-select: none
+
+body
+    font-family: var(--font-main)
+    font-weight: 400
+
+::selection
+    background: var(--color-main)
+    color: #fff
+
+input,
+textarea,
+button,
+select
+    font-family: inherit
